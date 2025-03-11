@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Our Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Navigation Bar Styles */
+        .navbar {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            cursor: pointer;
+            padding: 14px 16px;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: inherit;
+            font-family: inherit;
+            font-size: 16px;
+            margin: 0;
+        }
+        .navbar a, .dropdown:hover .dropbtn {
+            background-color: #45a049;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            max-width: 800px; /* Set a max width for the carousel */
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%; /* Make images responsive */
+            max-width: 600px; /* Set a max width for medium size */
+            display: none; /* Hide images by default */
+        }
+        .carousel img.active {
+            display: block; /* Show the active image */
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .category {
+            text-align: center;
+        }
+        .category img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn">Products</button>
+            <div class="dropdown-content">
+                <a href="category1.html">Category 1</a>
+                <a href="category2.html">Category 2</a>
+                <a href="category3.html">Category 3</a>
+                <a href="category4.html">Category 4</a>
+            </div>
+        </div>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Our Store</h1>
+
+        <!-- Carousel for Featured Products -->
+        <div class="carousel">
+            <img src="1.jpg" class="active" alt="Featured Product 1">
+            <img src="2.jpg" alt="Featured Product 2">
+            <img src="3.jpg" alt="Featured Product 3">
+        </div>
+
+        <h2>Shop by Categories</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="4.jpg" alt="Category 1">
+                <p><a href="category1.html">Category 1</a></p>
+            </div>
+            <div class="category">
+                <img src="4.jpg" alt="Category 2">
+
+                    <p><a href="category2.html">Category 2</a></p>
+                </div>
+                <div class="category">
+                    <img src="4.jpg" alt="Category 3">
+                    <p><a href="category3.html">Category 3</a></p>
+                </div>
+                <div class="category">
+                    <img src="4.jpg" alt="Category 4">
+                    <p><a href="category4.html">Category 4</a></p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2023 Our Store. All rights reserved.</p>
+            <p>Address: 123 Main St, Anytown, USA</p>
+            <p><a href="terms.html">Terms and Conditions</a> | <a href="privacy.html">Privacy Policy</a></p>
+        </footer>
+    
+        <script>
+            // JavaScript for Carousel Functionality
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel img');
+            const totalImages = images.length;
+    
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % totalImages;
+                images[currentIndex].classList.add('active');
+            }
+    
+            setInterval(showNextImage, 5000); // Change image every 5 seconds
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+        <form id="paymentForm">
+            <select id="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="paypal">PayPal</option>
+                <option value="cashout">Cashout</option>
+                <option value="binance">Binance</option>
+            </select>
+            <button type="submit">Pay</button>
+        </form>
+        <p id="paymentMessage" class="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
